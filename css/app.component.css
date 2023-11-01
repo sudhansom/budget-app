@@ -1,0 +1,27 @@
+:host .container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 12px;
+  border: 1px solid gray;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+}
+:host .container h1 {
+  text-align: center;
+}
+:host .container .progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #fff;
+  z-index: 10;
+}
+:host .container.mask:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}/*# sourceMappingURL=app.component.css.map */

@@ -1,0 +1,40 @@
+:host .container {
+  border: 1px solid gray;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+:host .container h3 {
+  margin-bottom: 0;
+}
+:host .container p {
+  display: inline-block;
+  font-size: 24px;
+  color: green;
+  line-height: 28px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+:host .container p:hover {
+  transform: scale(1.5);
+}
+:host .container .transfer {
+  margin-top: 24px;
+}
+:host .container .transfer input {
+  width: 20%;
+  border-radius: 6px;
+  padding: 6px;
+  margin-bottom: 12px;
+}
+:host .container .transfer button {
+  border-radius: 6px;
+  padding: 6px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+:host .container .transfer button:hover {
+  background-color: rgb(206, 203, 203);
+}/*# sourceMappingURL=saving.component.css.map */

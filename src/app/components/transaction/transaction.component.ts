@@ -24,6 +24,8 @@ export class TransactionComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.dataService.updateData(form.value);
     this.onTransactionAdded.emit();
-    form.reset();
+    setTimeout(() => {
+      form.reset();
+    }, 1000);
   }
 }

@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   constructor(private dataService: DataServiceService) {}
   saving = 0;
   balance = 0;
+  progressing = false;
 
   ngOnInit() {
     this.fetchData();
@@ -29,16 +30,28 @@ export class AppComponent implements OnInit {
   }
 
   handleTransferToBalance(event: number) {
-    this.balance = this.balance - event;
-    this.saving = this.saving + event;
+    this.progressing = true;
+    setTimeout(() => {
+      this.balance = this.balance - event;
+      this.saving = this.saving + event;
+      this.progressing = false;
+    }, 1000);
   }
 
   handleTransferToSaving(event: number) {
-    this.balance = this.balance + event;
-    this.saving = this.saving - event;
+    this.progressing = true;
+    setTimeout(() => {
+      this.balance = this.balance + event;
+      this.saving = this.saving - event;
+      this.progressing = false;
+    }, 1000);
   }
 
   handleAddTransaction() {
-    this.fetchData();
+    this.progressing = true;
+    setTimeout(() => {
+      this.fetchData();
+      this.progressing = false;
+    }, 1000);
   }
 }

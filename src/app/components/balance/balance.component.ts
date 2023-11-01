@@ -24,7 +24,9 @@ export class BalanceComponent implements OnInit {
   transferToSavings() {
     if (this.amountToTransfer <= this.balance) {
       this.onTransferToSaving.emit(this.amountToTransfer);
-      this.showInput = false;
+      setTimeout(() => {
+        this.showInput = false;
+      }, 1000);
     } else {
       alert('not enough...');
     }
