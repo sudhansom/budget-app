@@ -40,6 +40,7 @@ export class SavingComponent implements OnInit {
   changeToInput() {
     if (this.saving) {
       this.showInput = true;
+      this.targetAmount = 0;
     }
   }
 }

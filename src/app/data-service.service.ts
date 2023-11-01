@@ -27,9 +27,29 @@ export class DataServiceService {
       type: 'expense',
     },
   ];
+
   constructor() {}
 
   updateData(expense: ITransaction) {
-    this.data.push(expense);
+    setTimeout(() => {
+      let currentBalance = this.data.reduce((acc, curr) => {
+        if (curr.type === 'expense') {
+          return acc - curr.amount;
+        } else {
+          return acc + curr.amount;
+        }
+      }, 0);
+      console.log(currentBalance);
+      if (expense.type === 'expense' && expense.amount < currentBalance) {
+        this.data.push(expense);
+      } else if (
+        expense.type === 'expense' &&
+        expense.amount > currentBalance
+      ) {
+        alert('not enough money.');
+      } else {
+        this.data.push(expense);
+      }
+    }, 1000);
   }
 }

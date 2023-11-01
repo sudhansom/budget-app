@@ -1,6 +1,6 @@
 <div class="container">
   <h3>
-    {{ showInput ? "You are about to transfer balance" : "Your Balance is:" }}
+    {{ showInput ? "You are about to transfer balance" : "My Balance is:" }}
   </h3>
   <p *ngIf="!showInput" [title]="title" (click)="changeToInput()">
     {{ balance }}

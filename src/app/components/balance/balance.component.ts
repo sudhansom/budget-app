@@ -9,7 +9,7 @@ export class BalanceComponent implements OnInit {
   @Input() balance = 0;
   @Output() onTransferToSaving = new EventEmitter<number>();
   message = 'Your Balance is:';
-  amountToTransfer = this.balance;
+  amountToTransfer = 0;
   showInput = false;
   title = '';
   constructor() {}
@@ -38,6 +38,7 @@ export class BalanceComponent implements OnInit {
   changeToInput() {
     if (this.balance) {
       this.showInput = true;
+      this.amountToTransfer = 0;
     }
   }
 }
