@@ -1,4 +1,14 @@
 <div class="container">
-  <h3>Your Balance is:</h3>
-  <p [title]="title">{{ balance }}</p>
+  <h3>
+    {{ showInput ? "You are about to transfer balance" : "Your Balance is:" }}
+  </h3>
+  <p *ngIf="!showInput" [title]="title" (click)="changeToInput()">
+    {{ balance }}
+  </p>
+  <div *ngIf="showInput">
+    <input type="number" [value]="balance" [(ngModel)]="amountToTransfer" />
+    <button (click)="transferAmount()" (click)="transferAmount()">
+      Transfer
+    </button>
+  </div>
 </div>

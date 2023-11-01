@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-saving',
@@ -7,7 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SavingComponent implements OnInit {
   @Input() saving = 0;
+  @Output() onSavingTransfer = new EventEmitter();
   title = '';
+  showInput = false;
+  amountToTransfer = 0;
 
   constructor() {}
 
@@ -16,6 +19,21 @@ export class SavingComponent implements OnInit {
       this.title = 'click to transfer';
     } else {
       this.title = 'not enough to transfer';
+    }
+  }
+
+  transferAmount() {
+    if (this.amountToTransfer <= this.saving) {
+      this.onSavingTransfer.emit(this.amountToTransfer);
+      this.showInput = false;
+    } else {
+      alert('not enough...');
+    }
+  }
+
+  changeToInput() {
+    if (this.saving) {
+      this.showInput = true;
     }
   }
 }

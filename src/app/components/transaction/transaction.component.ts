@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { ITransaction } from './transaction.model';
 import { NgForm } from '@angular/forms';
+import { DataServiceService } from 'src/app/data-service.service';
 
 @Component({
   selector: 'app-transaction',
@@ -12,7 +13,7 @@ export class TransactionComponent implements OnInit {
   @Input() transactionType?: 'income' | 'expense';
   @Output() onTransactionAdded = new EventEmitter();
 
-  constructor() {}
+  constructor(private dataService: DataServiceService) {}
 
   ngOnInit(): void {}
 
@@ -21,6 +22,8 @@ export class TransactionComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    this.dataService.updateData(form.value);
+    this.onTransactionAdded.emit();
+    form.reset();
   }
 }

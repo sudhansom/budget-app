@@ -1,8 +1,16 @@
 <div class="container">
-  <h1>Welcome to the Budget App</h1>
-  <app-balance></app-balance>
+  <h1>Welcome to my Budget</h1>
+  <app-balance
+    (onBalanceTransfer)="balanceTransfer($event)"
+    [balance]="balance"
+  ></app-balance>
   <div class="transactions">
-    <app-transaction></app-transaction>
+    <app-transaction
+      (onTransactionAdded)="updateTransaction()"
+    ></app-transaction>
   </div>
-  <app-saving></app-saving>
+  <app-saving
+    [saving]="saving"
+    (onSavingTransfer)="savingTransfer($event)"
+  ></app-saving>
 </div>
