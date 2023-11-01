@@ -1,0 +1,32 @@
+:host {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    border: 1px solid gray;
+    border-radius: 12px;
+    padding: 12px;
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      overflow: hidden;
+
+      input {
+        width: 90%;
+        padding: 6px;
+        border-radius: 6px;
+      }
+      select {
+        width: 20%;
+        padding: 3px;
+        border-radius: 6px;
+      }
+    }
+    button {
+      padding: 6px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  }
+}

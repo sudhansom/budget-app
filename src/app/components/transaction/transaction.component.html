@@ -1,1 +1,19 @@
-<p>transaction works!</p>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <label
+    >Title
+    <input name="title" ngModel type="text" />
+  </label>
+  <label
+    >Amount:
+    <input name="amount" ngModel type="number" />
+  </label>
+  <label
+    >Type:
+    <select name="type" ngModel>
+      <option value=""></option>
+      <option value="expense">expense</option>
+      <option value="income">income</option>
+    </select>
+  </label>
+  <button>Submit</button>
+</form>

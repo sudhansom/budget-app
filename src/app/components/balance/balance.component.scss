@@ -1,0 +1,13 @@
+:host {
+  .container {
+    border: 1px solid gray;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    text-align: center;
+    p {
+      font-size: 24px;
+      color: green;
+      line-height: 28px;
+    }
+  }
+}

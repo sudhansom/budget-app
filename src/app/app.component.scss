@@ -1,0 +1,14 @@
+:host {
+  .container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 12px;
+    border: 1px solid gray;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    h1 {
+      text-align: center;
+    }
+  }
+}
