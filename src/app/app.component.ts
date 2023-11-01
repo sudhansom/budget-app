@@ -25,19 +25,20 @@ export class AppComponent implements OnInit {
       }
     });
     this.balance = total - this.saving;
+    console.log(this.dataService.data);
   }
 
-  balanceTransfer(event: number) {
+  handleTransferToBalance(event: number) {
     this.balance = this.balance - event;
     this.saving = this.saving + event;
   }
 
-  savingTransfer(event: number) {
+  handleTransferToSaving(event: number) {
     this.balance = this.balance + event;
     this.saving = this.saving - event;
   }
 
-  updateTransaction() {
+  handleAddTransaction() {
     this.fetchData();
   }
 }

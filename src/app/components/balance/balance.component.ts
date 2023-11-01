@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class BalanceComponent implements OnInit {
   @Input() balance = 0;
-  @Output() onBalanceTransfer = new EventEmitter<number>();
+  @Output() onTransferToSaving = new EventEmitter<number>();
   message = 'Your Balance is:';
   amountToTransfer = this.balance;
   showInput = false;
@@ -21,13 +21,16 @@ export class BalanceComponent implements OnInit {
       this.title = 'not enough to transfer';
     }
   }
-  transferAmount() {
+  transferToSavings() {
     if (this.amountToTransfer <= this.balance) {
-      this.onBalanceTransfer.emit(this.amountToTransfer);
+      this.onTransferToSaving.emit(this.amountToTransfer);
       this.showInput = false;
     } else {
       alert('not enough...');
     }
+  }
+  cancelTransfer() {
+    this.showInput = false;
   }
 
   changeToInput() {

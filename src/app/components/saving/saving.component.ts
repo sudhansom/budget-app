@@ -7,10 +7,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SavingComponent implements OnInit {
   @Input() saving = 0;
-  @Output() onSavingTransfer = new EventEmitter();
+  @Output() onTransferToBalance = new EventEmitter();
   title = '';
   showInput = false;
-  amountToTransfer = 0;
+  targetAmount = 0;
 
   constructor() {}
 
@@ -22,13 +22,16 @@ export class SavingComponent implements OnInit {
     }
   }
 
-  transferAmount() {
-    if (this.amountToTransfer <= this.saving) {
-      this.onSavingTransfer.emit(this.amountToTransfer);
+  transferToBalance() {
+    if (this.targetAmount <= this.saving) {
+      this.onTransferToBalance.emit(this.targetAmount);
       this.showInput = false;
     } else {
       alert('not enough...');
     }
+  }
+  cancelTransfer() {
+    this.showInput = false;
   }
 
   changeToInput() {
