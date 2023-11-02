@@ -5,7 +5,7 @@
   <p *ngIf="!showInput" [title]="title" (click)="changeToInput()">
     {{ balance }}
   </p>
-  <div *ngIf="showInput">
+  <div *ngIf="showInput" class="transfer">
     <input type="number" [value]="balance" [(ngModel)]="amountToTransfer" />
     <button (click)="transferToSavings()">Transfer</button>
     <button (click)="cancelTransfer()">Cancel</button>

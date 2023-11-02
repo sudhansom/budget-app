@@ -16,20 +16,26 @@
         transform: scale(1.5);
       }
     }
-    input {
-      width: 20%;
-      border-radius: 6px;
-      padding: 6px;
-      margin-bottom: 12px;
-    }
-    button {
-      border-radius: 6px;
-      padding: 6px;
-      margin-bottom: 12px;
-      cursor: pointer;
-      transition: all 0.4s ease-in-out;
-      &:hover {
-        background-color: rgb(206, 203, 203);
+    .transfer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      input {
+        width: 10%;
+        border-radius: 6px;
+        padding: 6px;
+        margin-bottom: 12px;
+      }
+      button {
+        border-radius: 6px;
+        padding: 6px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+          background-color: rgb(206, 203, 203);
+        }
       }
     }
   }
