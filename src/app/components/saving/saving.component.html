@@ -6,7 +6,7 @@
     {{ saving }}
   </p>
   <div *ngIf="showInput" class="transfer">
-    <input type="number" [value]="saving" [(ngModel)]="targetAmount" />
+    <input type="number" [value]="saving" [(ngModel)]="targetAmount" min="1" />
     <button (click)="transferToBalance()">Transfer</button>
     <button (click)="cancelTransfer()">Cancel</button>
   </div>

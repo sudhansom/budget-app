@@ -22,13 +22,13 @@ export class BalanceComponent implements OnInit {
     }
   }
   transferToSavings() {
-    if (this.amountToTransfer <= this.balance) {
+    if (this.amountToTransfer <= this.balance && this.amountToTransfer > 0) {
       this.onTransferToSaving.emit(this.amountToTransfer);
       setTimeout(() => {
         this.showInput = false;
       }, 1000);
     } else {
-      alert('not enough...');
+      alert('check your amount...');
     }
   }
   cancelTransfer() {

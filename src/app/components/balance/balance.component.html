@@ -6,7 +6,12 @@
     {{ balance }}
   </p>
   <div *ngIf="showInput" class="transfer">
-    <input type="number" [value]="balance" [(ngModel)]="amountToTransfer" />
+    <input
+      type="number"
+      [value]="balance"
+      [(ngModel)]="amountToTransfer"
+      min="1"
+    />
     <button (click)="transferToSavings()">Transfer</button>
     <button (click)="cancelTransfer()">Cancel</button>
   </div>
