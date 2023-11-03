@@ -5,26 +5,31 @@ import { ITransaction } from './components/transaction/transaction.model';
   providedIn: 'root',
 })
 export class DataServiceService {
-  data = [
+  data: ITransaction[] = [
     {
-      title: 'title1',
+      title: 'salary',
       amount: 900,
       type: 'income',
     },
     {
-      title: 'title2',
+      title: 'Pizza',
       amount: 200,
       type: 'expense',
     },
     {
-      title: 'title3',
+      title: 'salary2',
       amount: 400,
       type: 'income',
     },
     {
-      title: 'title4',
+      title: 'Bread',
       amount: 100,
       type: 'expense',
+    },
+    {
+      title: 'burrow',
+      amount: 200,
+      type: 'income',
     },
   ];
 

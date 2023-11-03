@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from './data-service.service';
+import { ITransaction } from './components/transaction/transaction.model';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +13,15 @@ export class AppComponent implements OnInit {
   saving = 0;
   balance = 0;
   progressing = false;
+  data: ITransaction[] = [];
 
   ngOnInit() {
     this.fetchData();
   }
   fetchData() {
+    this.data = this.dataService.data;
     let total = 0;
-    this.dataService.data.forEach((item) => {
+    this.data.forEach((item) => {
       if (item.type === 'expense') {
         total = total - item.amount;
       } else {
@@ -35,6 +38,7 @@ export class AppComponent implements OnInit {
       this.balance = this.balance - event;
       this.saving = this.saving + event;
       this.progressing = false;
+      this.data = this.dataService.data;
     }, 1000);
   }
 

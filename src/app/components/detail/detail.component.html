@@ -1,0 +1,19 @@
+<div class="container">
+  <h3>Details:</h3>
+  <div class="incomes-expenses">
+    <ol class="incomes">
+      <h4>Incomes:</h4>
+      <li *ngFor="let item of incomes; let i = index">
+        <span class="num">{{ i + 1 }}.</span><span>{{ item.title }}</span>
+        <span>{{ item.amount }}</span>
+      </li>
+    </ol>
+    <ol class="expenses">
+      <h4>Expenses:</h4>
+      <li *ngFor="let item of expenses; let i = index">
+        <span class="num">{{ i + 1 }}.</span><span>{{ item.title }}</span>
+        <span>{{ item.amount }}</span>
+      </li>
+    </ol>
+  </div>
+</div>

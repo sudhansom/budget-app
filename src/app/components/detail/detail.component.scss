@@ -1,0 +1,47 @@
+:host {
+  .container {
+    border: 1px solid gray;
+    border-radius: 12px;
+    padding: 12px;
+    h3 {
+      display: inline-block;
+      text-align: center;
+      border-bottom: 1px solid #000;
+      margin-block: 12px 0;
+    }
+    .incomes-expenses {
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+      .incomes {
+        flex-basis: 50%;
+      }
+      .expenses {
+        flex-basis: 50%;
+      }
+      ol {
+        padding: 0;
+        margin: 12px 0 0;
+      }
+      ol li {
+        margin-top: 12px;
+        display: flex;
+        gap: 24px;
+      }
+      ol li span {
+        flex-basis: 45%;
+        &.num {
+          flex-basis: 10%;
+        }
+      }
+      ol h4 {
+        display: inline-block;
+        text-align: left;
+        margin: 0;
+        border-bottom: 2px solid #000;
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { SavingComponent } from './components/saving/saving.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SavingComponent } from './components/saving/saving.component';
     TransactionComponent,
     BalanceComponent,
     SavingComponent,
+    DetailComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
